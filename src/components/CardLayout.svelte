@@ -1,14 +1,19 @@
-<div class="card">
+<div class="grid">
   <slot></slot>
 </div>
 
 <style>
-  .card {
-    background-color: #fff;
-    color: #333;
-    border-radius: 15px;
-    padding: 40px 50px;
-    margin: 20px 0;
-    position: relative;
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+    align-items: center;
+  }
+  @media(min-width: 768px) {
+    .grid {
+      /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 </style>
