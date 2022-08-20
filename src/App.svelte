@@ -11,7 +11,7 @@
 	let allOperations = [];
 
 	(async () => {
-		const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+		const response = await fetch("https://jsonplaceholder.typicode.com/photos");
 		const posts = await response.json();
 		items = posts;
 	})();
