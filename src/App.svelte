@@ -1,7 +1,11 @@
 <script>
+	import Header from "./components/Header.svelte";
 	import CardList from "./components/CardList.svelte";
 </script>
 
-<main class="container">
-	<CardList />
+<main>
+	<Header />
+	<div class="container">
+		<CardList />
+	</div>
 </main>

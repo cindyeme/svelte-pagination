@@ -6,6 +6,7 @@
   <img src={item.url} alt="" class="img-fluid">
   <h3 class="__title">{item.title}</h3>
   <p class="__text">{item.body}</p>
+  <a href="https://">Read more</a> 
 </div>
   
 <style>
@@ -18,7 +19,6 @@
     color: #fff;
     border-radius: 15px;
     padding: 1rem;
-    /* margin: 20px; */
     position: relative;
   }
   img{
@@ -28,6 +28,21 @@
   }
   .__title{
     font-size: 1rem;
-    font-weight: semi-bold;
+    font-weight: medium;
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .__text{
+    font-size: 0.9rem;
+    font-weight: normal;
+  }
+  a{
+    background: #8EA0F3;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
   }
 </style>
