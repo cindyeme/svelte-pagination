@@ -56,12 +56,6 @@ input:disabled {
 	color: #ccc;
 }
 
-button {
-	color: #333;
-	background-color: #f4f4f4;
-	outline: none;
-}
-
 button:disabled {
 	color: #999;
 }
@@ -71,7 +65,9 @@ button:not(:disabled):active {
 }
 
 button:focus {
-	border-color: #666;
+	outline: none;
+	border: 0;
+	box-shadow: none;
 }
 
 .container {
@@ -82,4 +78,7 @@ button:focus {
 .img-fluid {
   max-width: 100%;
   height: auto;
+}
+.pagination{
+	margin-top: 2.5rem;
 }

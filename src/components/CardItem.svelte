@@ -3,10 +3,10 @@
 </script>
 
 <div class="card">
-  <img src={item.url} alt="" class="img-fluid">
+  <img src="https://via.placeholder.com/600/d32776" alt="" class="img-fluid">
   <h3 class="__title">{item.title}</h3>
-  <p class="__text">{item.body}</p>
-  <a href="https://">Read more</a> 
+  <p class="__text">{item.body.substring(0, 80)}</p>
+  <a href={`https://jsonplaceholder.typicode.com/posts${item.id}`}>Read more</a> 
 </div>
   
 <style>
