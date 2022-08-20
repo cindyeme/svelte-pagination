@@ -2,10 +2,6 @@
 	
 </script>
 
-<main>
+<main class="container">
 	
 </main>
-
-<style>
-	
-</style>
