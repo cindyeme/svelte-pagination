@@ -8,12 +8,15 @@
   let items = [];
   let currentPage = 1;
   let pageSize = 6;
-	let allOperations = [];
+	let loading = true;
 
 	(async () => {
-		const response = await fetch("https://jsonplaceholder.typicode.com/photos?_limit=100");
-		const posts = await response.json();
-		items = posts;
+		await fetch("https://jsonplaceholder.typicode.com/photos?_limit=100").then(res => res.json()).then(
+			data => {
+				items = data;
+				loading = false;
+			}
+		);
 	})();
 
   $: paginatedItems = paginate({ items, pageSize, currentPage })
@@ -22,6 +25,9 @@
 
 <main>
 	<Header />
+	{#if loading}
+    <Overlay />
+  {/if}
 	<div class="container">
 		<CardLayout>
 			{#await paginatedItems}
