@@ -80,5 +80,7 @@ button:focus {
   height: auto;
 }
 .pagination{
-	margin-top: 2.5rem;
+	margin-top: 3rem;
+	background: #fff;
+		padding: 0 10px;
 }

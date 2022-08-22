@@ -2,7 +2,7 @@
 	import Header from "./components/Header.svelte";
 	import CardLayout from "./components/CardLayout.svelte";
 	import CardItem from "./components/CardItem.svelte";
-	import { paginate, LightPaginationNav } from 'svelte-paginate';
+	import { paginate, PaginationNav } from 'svelte-paginate';
 	import Overlay from "./components/Overlay.svelte";
 
   let items = [];
@@ -43,15 +43,53 @@
 			<div>loading...</div>
 		{:then paginatedItems}
 			<div class="pagination">
-				<LightPaginationNav
+				<PaginationNav
 					totalItems="{items.length}"
 					pageSize="{pageSize}"
 					currentPage="{currentPage}"
 					limit="{1}"
 					showStepOptions="{true}"
 					on:setPage="{(e) => currentPage = e.detail.page}"
-				/>
+				>
+				<span slot="prev">
+					Prev
+				</span>
+				<span slot="next">
+					Next
+				</span>
+			</PaginationNav>
 			</div>
 		{/await}
 	</div>
 </main>
+
+<style>
+	.pagination :global(.pagination-nav) {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+	}
+	.pagination :global(.option){
+		color: rgb(51, 51, 51);
+		padding: 10px 7px;
+		cursor: pointer;
+	}
+
+	@media(min-width: 992px){
+		.pagination :global(.option){
+			padding: 10px 15px !important;
+		}
+	}
+
+	.pagination :global(.option.active){
+		color: #fff;
+		background: rgb(38, 93, 151);
+	}
+
+.pagination :global(.option.disabled){
+	color: #999;
+	cursor: not-allowed;
+}
+
+</style>
