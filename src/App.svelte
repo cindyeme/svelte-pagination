@@ -64,6 +64,7 @@
 					<span slot="prev">
 						Prev
 					</span>
+					<span slot="ellipsis">|</span>
 					<span slot="next">
 						Next
 					</span>
@@ -79,6 +80,9 @@
 		justify-content: center;
 		align-items: center;
 		gap: 20px;
+	}
+	.pagination_nav :global(.option.number){
+		display: none;
 	}
 	.pagination :global(.option){
 		color: rgb(51, 51, 51);
