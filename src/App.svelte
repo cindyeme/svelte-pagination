@@ -34,7 +34,7 @@
 				<Overlay />
 			{:then items}
 				{#each items as item}
-					<CardItem item={item} />
+					<CardItem {item} />
 				{/each}
 			{/await}
 		</CardLayout>
