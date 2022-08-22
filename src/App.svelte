@@ -2,7 +2,7 @@
 	import Header from "./components/Header.svelte";
 	import CardLayout from "./components/CardLayout.svelte";
 	import CardItem from "./components/CardItem.svelte";
-	import { paginate, PaginationNav } from 'svelte-paginate';
+	import { paginate, PaginationNav, LightPaginationNav } from 'svelte-paginate';
 	import Overlay from "./components/Overlay.svelte";
 
   let items = [];
@@ -37,24 +37,38 @@
 					<CardItem {item} />
 				{/each}
 			{/await}
-		</CardLayout>
+		</CardLayout>	
 		
+		<!-- Pagination -->
 		<div class="pagination">
-			<PaginationNav
+		<!-- Shows angles for prev/next -->
+			<LightPaginationNav
 				totalItems="{items.length}"
 				pageSize="{pageSize}"
 				currentPage="{currentPage}"
 				limit="{1}"
 				showStepOptions="{true}"
 				on:setPage="{(e) => currentPage = e.detail.page}"
-			>
-				<span slot="prev">
-					Prev
-				</span>
-				<span slot="next">
-					Next
-				</span>
-			</PaginationNav>
+			/>
+
+			<!-- Shows prev/next text -->
+			<div class="pagination_nav">
+				<PaginationNav
+					totalItems="{items.length}"
+					pageSize="{pageSize}"
+					currentPage="{currentPage}"
+					limit="{1}"
+					showStepOptions="{true}"
+					on:setPage="{(e) => currentPage = e.detail.page}"
+				>
+					<span slot="prev">
+						Prev
+					</span>
+					<span slot="next">
+						Next
+					</span>
+				</PaginationNav>
+			</div>
 		</div>
 	</div>
 </main>
