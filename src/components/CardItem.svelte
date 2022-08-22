@@ -9,7 +9,7 @@
     <!-- {item.body.substring(0, 80)} -->
     quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum.
   </p>
-  <a href={`https://jsonplaceholder.typicode.com/posts${item.id}`}>Read more</a> 
+  <a href={`https://jsonplaceholder.typicode.com/posts/${item.id}`}>Read more</a> 
 </div>
   
 <style>

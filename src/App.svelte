@@ -39,18 +39,15 @@
 			{/await}
 		</CardLayout>
 		
-		{#await paginatedItems}
-			<div>loading...</div>
-		{:then paginatedItems}
-			<div class="pagination">
-				<PaginationNav
-					totalItems="{items.length}"
-					pageSize="{pageSize}"
-					currentPage="{currentPage}"
-					limit="{1}"
-					showStepOptions="{true}"
-					on:setPage="{(e) => currentPage = e.detail.page}"
-				>
+		<div class="pagination">
+			<PaginationNav
+				totalItems="{items.length}"
+				pageSize="{pageSize}"
+				currentPage="{currentPage}"
+				limit="{1}"
+				showStepOptions="{true}"
+				on:setPage="{(e) => currentPage = e.detail.page}"
+			>
 				<span slot="prev">
 					Prev
 				</span>
@@ -58,8 +55,7 @@
 					Next
 				</span>
 			</PaginationNav>
-			</div>
-		{/await}
+		</div>
 	</div>
 </main>
 
